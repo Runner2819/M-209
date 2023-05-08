@@ -164,17 +164,17 @@ class M209:
         self.letter_counter = 0
 
 
-# lugset = input("enter lug settings ")
-lugset = "3-6 4-5 2-5*2 1-5 1-6 4-0*4 2-0*10 5-0*6 6-0"
-# pinset = [input("enter pin settings for wheel " + str(i)) for i in range(6)]
-pinset = ["ABDHIKMNSTVW", "ADEGJKLORSUX", "ABGHJLMNRSTUX", "CEFHIMNPSTU", "BDEFHIMNPS", "ABDHKNOQ"]
+lugset = input("enter lug settings ")
+# lugset = "3-6 4-5 2-5*2 1-5 1-6 4-0*4 2-0*10 5-0*6 6-0"
+pinset = [input("enter pin settings for wheel " + str(i)) for i in range(6)]
+# pinset = ["ABDHIKMNSTVW", "ADEGJKLORSUX", "ABGHJLMNRSTUX", "CEFHIMNPSTU", "BDEFHIMNPS", "ABDHKNOQ"]
 
 machine = M209(lugset, pinset)
 
-# ext_key = input("enter external key ")
-ext_key = "ABOOBA"
-# letter = input("enter random letter ")
-letter = "S"
+ext_key = input("enter external key ")
+# ext_key = "ABOOBA"
+letter = input("enter random letter ")
+# letter = "S"
 machine.prepare(ext_key, letter)
 
 # while True:

@@ -1,7 +1,6 @@
 # m209 : The base Class of M209
 
 import string
-import random
 
 M209_ALPHABET_LIST = string.ascii_uppercase
 M209_ALPHABET_SET = set(string.ascii_uppercase)
@@ -162,34 +161,3 @@ class M209:
         for wh in self.wheels:
             wh.rotate(-self.letter_counter)
         self.letter_counter = 0
-
-
-lugset = input("enter lug settings ")
-# lugset = "3-6 4-5 2-5*2 1-5 1-6 4-0*4 2-0*10 5-0*6 6-0"
-pinset = [input("enter pin settings for wheel " + str(i)) for i in range(6)]
-# pinset = ["ABDHIKMNSTVW", "ADEGJKLORSUX", "ABGHJLMNRSTUX", "CEFHIMNPSTU", "BDEFHIMNPS", "ABDHKNOQ"]
-
-machine = M209(lugset, pinset)
-
-ext_key = input("enter external key ")
-# ext_key = "ABOOBA"
-letter = input("enter random letter ")
-# letter = "S"
-machine.prepare(ext_key, letter)
-
-# while True:
-#     operation = int(input("0. end\n1. enc\n2. dec\n"))
-#     if operation == 0:
-#         break
-#     elif operation == 1:
-#         print(machine.encrypt(input("text to encipher ")))
-#     else:
-#         machine.reset()
-#         print(machine.decrypt(input("text to decipher")))
-
-enc = machine.encrypt("SOMETHING VERY IMPORTANT")
-print(enc)
-
-machine.reset()
-
-print(machine.decrypt(enc))
